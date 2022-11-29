@@ -1,0 +1,63 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="{% static '/css/weather.css' %}">
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: #111;
+        }
+        
+        </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/mainpage"><i class="fas fa-address-card" style='font-size:24px'></i> Home</a></li>
+       <!-- <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>-->
+        <li style="float:right"><a class="active" href="/logout"><i class="fas fa-power-off" style='font-size:24px'></i> Logout</a></li>
+      </ul>
+      
+    <main>
+        <img class="weather-farmer-image" src="{% static '/images/weatherfarmer.png'%}">
+        <div class="row" style="text-align: center;">
+            <form action="">
+                <input type="search" id="search" placeholder="Search by city name">
+            </form>
+        </div>
+        <div class="row" id="weather">
+           
+        </div>
+    </main>
+    <script src="{% static '/js/weather.js' %}"></script>
+</body>
+
+</html>

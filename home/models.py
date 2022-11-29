@@ -1,0 +1,46 @@
+import email
+from email.policy import default
+from unittest.util import _MAX_LENGTH
+from django.db import models
+from django.contrib.auth.models import User
+
+# Create your models here.
+class Contact(models.Model):
+    name=models.CharField(max_length=100)
+    phone=models.CharField(max_length=10)
+    email=models.CharField(max_length=100)
+    problem=models.CharField(max_length=500,default="m")
+    date=models.DateField()
+
+    def __str__(self):
+        return self.name 
+
+
+
+
+class Question(models.Model):
+    author = models.ForeignKey(User, null=False, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200, null=False)
+    body = models.TextField(null=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_responses(self):
+        return self.responses.filter(parent=None)
+
+class Response(models.Model):
+    user = models.ForeignKey(User, null=False, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, null=False, on_delete=models.CASCADE, related_name='responses')
+    parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
+    body = models.TextField(null=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.body
+
+    def get_responses(self):
+        return Response.objects.filter(parent=self)        

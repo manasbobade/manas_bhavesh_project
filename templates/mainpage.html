@@ -1,0 +1,70 @@
+{%load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '/css/mainpage.css' %}">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>MAIN | PAGE</title>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-light " style="background-color:#03a04c;">
+        <button type="button" class="btn btn-dark btn-lg l-button"><a style="color:white" href="/logout"><i class="fas fa-address-card" style='font-size:24px'></i> Logout</a></button>
+      </nav>
+
+
+  
+      <br><br><br>
+  
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 box-shadow">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal">Check Weather</h4>
+            </div>
+            <div class="card-body">
+              <img class="sun-image" src="{% static '/images/sun1.png'%}">
+              <button type="button" class="btn btn-lg btn-block btn-success"><a style="color:white" href="/weather"><i class="fa fa-bug" style='font-size:24px'></i>   CHECK</a></button>
+            </div>
+          </div>
+          <div class="card mb-4 box-shadow">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal">Detect Disease</h4>
+            </div>
+            <div class="card-body">
+                <img class="sun-image" src="{% static '/images/diagnose.png'%}">
+              <button type="button" class="btn btn-lg btn-block btn-success"><a style="color:white" href="/disease"><i class="fa fa-bug" style='font-size:24px'></i> DETECT</a></button>
+            </div>
+          </div>
+          <div class="card mb-4 box-shadow">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal">Get Expert Solutions</h4>
+            </div>
+            <div class="card-body">
+                <img class="sun-image" src="{% static '/images/qa.png'%}">
+              <button type="button" class="btn btn-lg btn-block btn-success"><a style="color:white" href="/homePage"><i class="fa fa-comment" style='font-size:24px'></i>Ask</a></button>
+            </div>
+          </div>
+        </div>
+  </body>
+</html>
